@@ -9,7 +9,7 @@ export splineBasisFuns,
        quadraticSplineBFE,
        linearSplineBFE
 
-include("code.jl")
+include("BSplines.jl")
 ##include("Fourier.jl")
 ##include("Wavelets.jl")
 

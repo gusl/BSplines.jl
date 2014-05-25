@@ -1,0 +1,86 @@
+tests
+pwd()
+cd("../..")
+pwd()
+Pkg.generate
+Pkg.generate("SubsetSelection", "MIT")
+DataFrame
+d
+@test mm.model_colnames == [
+     "(Intercept)"
+     "x1:6"        
+     "x1:7"        
+     "x1:8"        
+     "log(x2)"     
+     "x3"          
+     "x1:6&log(x2)"
+     "x1:6&x3"     
+     "x1:7&log(x2)"
+     "x1:7&x3"     
+     "x1:8&log(x2)"
+     "x1:8&x3" ]
+mf = ModelFrame(f, d)
+f
+d
+d.y
+d["y"]
+d["x1"]
+@test mm.response_colnames == ["y"]
+using Base.Test, GLM, DataFrames
+Pkg.add("GLM")
+using Base.Test, GLM, DataFrames
+## Formaldehyde data from the R Datasets package
+form = DataFrame(Carb=[0.1,0.3,0.5,0.6,0.7,0.9],OptDen=[0.086,0.269,0.446,0.538,0.626,0.782])
+lm1 = fit(LinearModel, OptDen ~ Carb, form)
+LinearModel
+using Base.Test, GLM, DataFrames
+
+## Formaldehyde data from the R Datasets package
+form = DataFrame(Carb=[0.1,0.3,0.5,0.6,0.7,0.9],OptDen=[0.086,0.269,0.446,0.538,0.626,0.782])
+lm1 = fit(LinearModel, OptDen ~ Carb, form)
+lm1 = fit("LinearModel", OptDen ~ Carb, form)
+using GLM, RDatasets
+Pkg.add("RDatasets")
+form = dataset("datasets","Formaldehyde")
+using GLM
+form = dataset("datasets","Formaldehyde")
+dataset
+using DataFrames
+dataset
+Pkg.update()
+dataset
+Pkg.add("NLreg")
+Pkg.status()
+Pkg.add("Distributions")
+dataset
+dobson = DataFrame(counts=[18.,17,15,20,10,20,25,13,12], outcome=gl(3,1,9), treatment=gl(3,3))
+gm1 = glm(:(counts ~ outcome + treatment), dobson, Poisson());
+@test_approx_eq deviance(gm1) 5.12914107700115
+gm1
+gm1 = glm(:(counts ~ outcome + treatment), dobson, Poisson());
+gm1 = glm(:(counts ~ outcome + treatment), dobson, Poisson())
+:(1 + 2)
+Formula(x + 1)
+using Base.Test
+using GLM
+
+dobson = DataFrame(counts=[18.,17,15,20,10,20,25,13,12], outcome=gl(3,1,9), treatment=gl(3,3))
+gm1 = glm(:(counts ~ outcome + treatment), dobson, Poisson());
+gm1 = glm(:(counts ~ outcome + treatment), dobson, Poisson())
+gm1
+Formula
+Formula("y ~ x")
+Formula(:(y ~ x))
+Formula(:(y, x))
+Formula(:(y + x))
+methods
+methods(Formula)
+Formula(y,x)
+Formula(:y,:x)
+lm1 = fit(LinearModel, OptDen ~ Carb, form)
+using GLM
+lm1 = fit(LmMod, OptDen ~ Carb, form)
+Pkg.update()
+Pkg.status()
+lm1 = fit(LinearModel, OptDen ~ Carb, form)
+LinearModel
